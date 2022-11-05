@@ -40,7 +40,7 @@ router.post(
         id: user.id,
         email: user.email,
       },
-      "ticketing-jwt"
+      process.env.JWT_KEY!
     );
 
     req.session = {
