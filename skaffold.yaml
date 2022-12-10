@@ -16,3 +16,12 @@ build:
         manual:
           - dest: .
             src: "src/**/*.ts"
+
+    - image: armughanahmed/ticketing-client
+      context: ticketing-client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - dest: .
+            src: "src/**/*.*"
