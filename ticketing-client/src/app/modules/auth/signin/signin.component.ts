@@ -4,12 +4,12 @@ import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss'],
+  selector: 'app-signin',
+  templateUrl: './signin.component.html',
+  styleUrls: ['./signin.component.scss'],
 })
-export class SignupComponent implements OnInit {
-  signupForm!: FormGroup;
+export class SigninComponent implements OnInit {
+  signinForm!: FormGroup;
   errors: any[] = [];
   constructor(
     private _fb: FormBuilder,
@@ -22,21 +22,21 @@ export class SignupComponent implements OnInit {
   }
 
   private initializeForm() {
-    this.signupForm = this._fb.group({
+    this.signinForm = this._fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
     });
   }
 
   private resetForm() {
-    this.signupForm.reset({
+    this.signinForm.reset({
       email: '',
       password: '',
     });
   }
 
-  onSignupFormSubmit() {
-    this._authService.signup(this.signupForm.value).subscribe({
+  onSigninFormSubmit() {
+    this._authService.signin(this.signinForm.value).subscribe({
       next: (x) => {
         this.errors = [];
         console.log(x);

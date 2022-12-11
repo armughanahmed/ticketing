@@ -10,4 +10,7 @@ export class AuthService {
   signup(payload: any) {
     return this._http.post('/api/users/signup', payload);
   }
+  signin(payload: any) {
+    return this._http.post('/api/users/signin', payload);
+  }
 }

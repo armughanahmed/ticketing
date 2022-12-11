@@ -1,0 +1,10 @@
+<nav class="navbar navbar-light bg-light">
+  <a routerLink="/" class="navbar-brand">GitTix</a>
+  <div class="d-flex justify-content-end">
+    <ul class="nav d-flex align-items-center">
+      {{
+        currentUser ? "Sign Out" : "Sign In"
+      }}
+    </ul>
+  </div>
+</nav>

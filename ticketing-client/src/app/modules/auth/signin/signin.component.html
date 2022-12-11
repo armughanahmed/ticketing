@@ -1,5 +1,5 @@
-<form [formGroup]="signupForm" (ngSubmit)="onSignupFormSubmit()">
-  <h1>Sign Up</h1>
+<form [formGroup]="signinForm" (ngSubmit)="onSigninFormSubmit()">
+  <h1>Sign In</h1>
   <div class="form-group">
     <label>Email Address</label>
     <input class="form-control" formControlName="email" />
@@ -14,7 +14,7 @@
       <li *ngFor="let err of errors">{{ err.message }}</li>
     </ul>
   </div>
-  <button class="btn btn-primary" [disabled]="!signupForm.valid">
-    Sing Up
+  <button class="btn btn-primary" [disabled]="!signinForm.valid">
+    Sign In
   </button>
 </form>
