@@ -2,12 +2,9 @@ import express, { Request, Response } from "express";
 import { body, validationResult } from "express-validator";
 import jwt from "jsonwebtoken";
 import cookieSession from "cookie-session";
-
-import { BadRequestError } from "../errors/bad-request-error";
-import { RequestValidationError } from "../errors/request-validation-error";
-import { validateRequest } from "../middlewares/validate-request";
 import { User } from "../models/user";
 import { Password } from "../services/password";
+import { BadRequestError, validateRequest } from "@armughan-ticketing/common";
 
 const router = express.Router();
 
