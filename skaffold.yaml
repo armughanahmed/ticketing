@@ -26,6 +26,15 @@ build:
           - dest: .
             src: "src/**/*.ts"
 
+    - image: armughanahmed/orders
+      context: orders
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - dest: .
+            src: "src/**/*.ts"
+
     - image: armughanahmed/ticketing-client
       context: ticketing-client
       docker:
